@@ -81,17 +81,22 @@ import { ref } from 'vue'
 
 const baseUrl = import.meta.env.BASE_URL
 
+// Fonction pour encoder les URLs d'images
+const getImageUrl = (filename) => {
+  return baseUrl + encodeURIComponent(filename)
+}
+
 const formations = ref([
   {
     name: 'EST Guelmim',
     logoText: 'EST Guelmim',
-    image: `${baseUrl}EST guelmim.png`,
+    image: getImageUrl('EST guelmim.png'),
     color: '#dc2626'
   },
   {
     name: 'ENSIASD',
     logoText: 'ENSIASD',
-    image: `${baseUrl}ENSIASD.png`,
+    image: getImageUrl('ENSIASD.png'),
     color: '#16a34a'
   }
 ])
@@ -100,25 +105,25 @@ const experiences = ref([
   {
     name: 'Commune Inzegane',
     logoText: 'Commune Inzegane',
-    image: `${baseUrl}comune inzegane.png`,
+    image: getImageUrl('comune inzegane.png'),
     color: '#2563eb'
   },
   {
     name: 'Cofisk SARL',
     logoText: 'Cofisk SARL',
-    image: `${baseUrl}cofisk.png`,
+    image: getImageUrl('cofisk.png'),
     color: '#2563eb'
   },
   {
     name: 'UM6P-FMS',
     logoText: 'UM6P-FMS',
-    image: `${baseUrl}um6p.png`,
+    image: getImageUrl('um6p.png'),
     color: '#1f2937'
   },
   {
     name: 'LabSiv',
     logoText: 'LabSiv',
-    image: `${baseUrl}labsiv.png`,
+    image: getImageUrl('labsiv.png'),
     color: '#1f2937'
   }
 ])

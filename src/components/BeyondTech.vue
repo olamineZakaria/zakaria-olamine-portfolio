@@ -53,21 +53,26 @@ const router = useRouter()
 
 const baseUrl = import.meta.env.BASE_URL
 
+// Fonction pour encoder les URLs d'images
+const getImageUrl = (filename) => {
+  return baseUrl + encodeURIComponent(filename)
+}
+
 const experiences = ref([
   {
     title: 'Intéressé par l\'entrepreneuriat',
     emoji: '',
-    image: `${baseUrl}hultpriz.JPG`
+    image: getImageUrl('hultpriz.JPG')
   },
   {
     title: 'Intérêt pour le théâtre',
     emoji: '',
-    image: `${baseUrl}theatre.png`
+    image: getImageUrl('theatre.png')
   },
   {
     title: 'Passionné de Football',
     emoji: '',
-    image: `${baseUrl}foorball.png`
+    image: getImageUrl('foorball.png')
   }
 ])
 

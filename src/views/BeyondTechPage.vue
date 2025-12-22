@@ -69,24 +69,29 @@ const currentIndex = ref(0)
 
 const baseUrl = import.meta.env.BASE_URL
 
+// Fonction pour encoder les URLs d'images
+const getImageUrl = (filename) => {
+  return baseUrl + encodeURIComponent(filename)
+}
+
 const experiences = ref([
   {
     titleLine1: 'Intéressé par',
     titleLine2: 'l\'entrepreneuriat',
     emoji: '',
-    image: `${baseUrl}hultpriz.JPG`
+    image: getImageUrl('hultpriz.JPG')
   },
   {
     titleLine1: 'Intérêt pour',
     titleLine2: 'le théâtre',
     emoji: '',
-    image: `${baseUrl}theatre.png`
+    image: getImageUrl('theatre.png')
   },
   {
     titleLine1: 'Passionné de',
     titleLine2: 'Football',
     emoji: '',
-    image: `${baseUrl}foorball.png`
+    image: getImageUrl('foorball.png')
   }
 ])
 
