@@ -19,7 +19,7 @@
       <div class="hero-image">
         <div class="image-wrapper">
           <img 
-            src="/zazazakaria.png" 
+            :src="`${import.meta.env.BASE_URL}zazazakaria.png`" 
             alt="ACHRAF EL FAIQ" 
             class="hero-photo"
             @error="handleImageError"

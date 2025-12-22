@@ -67,24 +67,26 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const currentIndex = ref(0)
 
+const baseUrl = import.meta.env.BASE_URL
+
 const experiences = ref([
   {
     titleLine1: 'Intéressé par',
     titleLine2: 'l\'entrepreneuriat',
     emoji: '',
-    image: '/hultpriz.JPG'
+    image: `${baseUrl}hultpriz.JPG`
   },
   {
     titleLine1: 'Intérêt pour',
     titleLine2: 'le théâtre',
     emoji: '',
-    image: '/theatre.png'
+    image: `${baseUrl}theatre.png`
   },
   {
     titleLine1: 'Passionné de',
     titleLine2: 'Football',
     emoji: '',
-    image: '/foorball.png'
+    image: `${baseUrl}foorball.png`
   }
 ])
 

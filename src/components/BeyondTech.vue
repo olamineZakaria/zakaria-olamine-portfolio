@@ -51,21 +51,23 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
+const baseUrl = import.meta.env.BASE_URL
+
 const experiences = ref([
   {
     title: 'Intéressé par l\'entrepreneuriat',
     emoji: '',
-    image: '/hultpriz.JPG'
+    image: `${baseUrl}hultpriz.JPG`
   },
   {
     title: 'Intérêt pour le théâtre',
     emoji: '',
-    image: '/theatre.png'
+    image: `${baseUrl}theatre.png`
   },
   {
     title: 'Passionné de Football',
     emoji: '',
-    image: '/foorball.png'
+    image: `${baseUrl}foorball.png`
   }
 ])
 

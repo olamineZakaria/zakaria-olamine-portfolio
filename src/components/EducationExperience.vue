@@ -79,17 +79,19 @@
 <script setup>
 import { ref } from 'vue'
 
+const baseUrl = import.meta.env.BASE_URL
+
 const formations = ref([
   {
     name: 'EST Guelmim',
     logoText: 'EST Guelmim',
-    image: '/EST guelmim.png',
+    image: `${baseUrl}EST guelmim.png`,
     color: '#dc2626'
   },
   {
     name: 'ENSIASD',
     logoText: 'ENSIASD',
-    image: '/ENSIASD.png',
+    image: `${baseUrl}ENSIASD.png`,
     color: '#16a34a'
   }
 ])
@@ -98,25 +100,25 @@ const experiences = ref([
   {
     name: 'Commune Inzegane',
     logoText: 'Commune Inzegane',
-    image: '/comune inzegane.png',
+    image: `${baseUrl}comune inzegane.png`,
     color: '#2563eb'
   },
   {
     name: 'Cofisk SARL',
     logoText: 'Cofisk SARL',
-    image: '/cofisk.png',
+    image: `${baseUrl}cofisk.png`,
     color: '#2563eb'
   },
   {
     name: 'UM6P-FMS',
     logoText: 'UM6P-FMS',
-    image: '/um6p.png',
+    image: `${baseUrl}um6p.png`,
     color: '#1f2937'
   },
   {
     name: 'LabSiv',
     logoText: 'LabSiv',
-    image: '/labsiv.png',
+    image: `${baseUrl}labsiv.png`,
     color: '#1f2937'
   }
 ])
