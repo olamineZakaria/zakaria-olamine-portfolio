@@ -5,7 +5,7 @@
         <h1 class="hero-name">Zakaria Olamine</h1>
         <p class="hero-title">Data Scientist • Ingénieur IA/ML</p>
         <p class="hero-description">
-          Je développe et déploie des modèles de machine learning pour valoriser des données complexes et soutenir la prise de décision, de l'analyse exploratoire à la mise en production.
+          Je conçois et déploie des solutions d'intelligence artificielle pour transformer des données complexes en leviers d'aide à la décision, de l'analyse exploratoire à la mise en production.
         </p>
         <div class="hero-buttons">
           <button class="btn" @click="scrollTo('projects')">
