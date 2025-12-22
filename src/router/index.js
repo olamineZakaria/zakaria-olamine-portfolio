@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import ContactPage from '../views/ContactPage.vue'
 import BeyondTechPage from '../views/BeyondTechPage.vue'
+import BlogPage from '../views/BlogPage.vue'
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/beyond-tech',
     name: 'BeyondTech',
     component: BeyondTechPage
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: BlogPage
   }
 ]
 

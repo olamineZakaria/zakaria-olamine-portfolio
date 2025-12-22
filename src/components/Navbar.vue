@@ -41,6 +41,17 @@
         </li>
         <li>
           <router-link 
+            to="/blog"
+            class="nav-btn"
+            :class="{ active: $route.path === '/blog' }"
+            @click="isMenuOpen = false"
+          >
+            <i class="fas fa-blog"></i>
+            <span>Blog</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link 
             to="/contact"
             class="nav-btn"
             :class="{ active: $route.path === '/contact' }"
