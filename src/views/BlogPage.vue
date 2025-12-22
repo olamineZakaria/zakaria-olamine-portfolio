@@ -5,7 +5,7 @@
         <div class="section-tabs">
           <span>BLOG</span>
         </div>
-        <h2 class="section-main-title">Blog</h2>
+        <h2 class="section-main-title">Réflexions sur la Technologie et la Science</h2>
         <p class="section-description">
           Découvrez mes réflexions sur l'intelligence artificielle, la science des données et les dernières tendances technologiques.
         </p>
