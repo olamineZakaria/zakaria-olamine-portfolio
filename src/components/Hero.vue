@@ -19,7 +19,7 @@
       <div class="hero-image">
         <div class="image-wrapper">
           <img 
-            :src="`${import.meta.env.BASE_URL}zazazakaria.png`" 
+            :src="heroImageSrc" 
             alt="ACHRAF EL FAIQ" 
             class="hero-photo"
             @error="handleImageError"
@@ -39,6 +39,9 @@
 
 <script setup>
 import { ref } from 'vue'
+
+const baseUrl = import.meta.env.BASE_URL
+const heroImageSrc = `${baseUrl}zazazakaria.png`
 
 const imageError = ref(false)
 
