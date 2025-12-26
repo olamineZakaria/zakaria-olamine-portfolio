@@ -24,6 +24,8 @@
               v-for="(formation, index) in formations" 
               :key="index"
               class="logo-card"
+              :class="{ 'clickable': formation.name === 'ENSIASD' || formation.name === 'EST Guelmim' }"
+              @click="formation.name === 'ENSIASD' ? showEnsiasdModal = true : formation.name === 'EST Guelmim' ? showEstGuelmimModal = true : null"
             >
               <div class="logo-wrapper">
                 <div class="logo-placeholder">
@@ -73,6 +75,72 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal ENSIASD -->
+    <div v-if="showEnsiasdModal" class="modal-overlay" @click="showEnsiasdModal = false">
+      <div class="modal-content" @click.stop>
+        <button class="modal-close" @click="showEnsiasdModal = false">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-header">
+          <h3 class="modal-title">ENSIASD</h3>
+        </div>
+        <div class="modal-body">
+          <p class="modal-school-name">
+            L'École Nationale Supérieure de l'Intelligence Artificielle et Sciences des Données
+          </p>
+          <div class="modal-section">
+            <h4 class="modal-section-title">Formations</h4>
+            <p class="modal-section-content">Sciences des Données, Big Data & IA</p>
+          </div>
+          <div class="modal-section">
+            <h4 class="modal-section-title">Site Web</h4>
+            <a 
+              href="https://ensiasd.uiz.ac.ma/sdbdia/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="modal-link"
+            >
+              https://ensiasd.uiz.ac.ma/sdbdia/
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal EST Guelmim -->
+    <div v-if="showEstGuelmimModal" class="modal-overlay" @click="showEstGuelmimModal = false">
+      <div class="modal-content" @click.stop>
+        <button class="modal-close" @click="showEstGuelmimModal = false">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-header">
+          <h3 class="modal-title">EST Guelmim</h3>
+        </div>
+        <div class="modal-body">
+          <p class="modal-school-name">
+            École Supérieure de Technologie Guelmim
+          </p>
+          <div class="modal-section">
+            <h4 class="modal-section-title">Formations</h4>
+            <p class="modal-section-content">Informatique</p>
+          </div>
+          <div class="modal-section">
+            <h4 class="modal-section-title">Site Web</h4>
+            <a 
+              href="http://www.estg.ac.ma" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="modal-link"
+            >
+              http://www.estg.ac.ma
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -85,6 +153,10 @@ const baseUrl = import.meta.env.BASE_URL
 const getImageUrl = (filename) => {
   return baseUrl + encodeURIComponent(filename)
 }
+
+// État pour les modales
+const showEnsiasdModal = ref(false)
+const showEstGuelmimModal = ref(false)
 
 const formations = ref([
   {
@@ -223,6 +295,10 @@ const experiences = ref([
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+.logo-card.clickable {
+  cursor: pointer;
 }
 
 .logo-wrapper {
@@ -413,6 +489,199 @@ const experiences = ref([
 
   .logo-label {
     font-size: 0.8rem;
+  }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #f3f4f6;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #6b7280;
+  font-size: 1.2rem;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: #e5e7eb;
+  color: #1f2937;
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-school-name {
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.modal-section {
+  margin-bottom: 1.5rem;
+}
+
+.modal-section:last-child {
+  margin-bottom: 0;
+}
+
+.modal-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modal-section-content {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.modal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  word-break: break-all;
+}
+
+.modal-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.modal-link i {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 90%;
+    border-radius: 16px;
+  }
+
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-school-name {
+    font-size: 1rem;
+  }
+
+  .modal-close {
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    max-width: 95%;
+  }
+
+  .modal-header {
+    padding: 1.25rem 1.25rem 0.75rem;
+  }
+
+  .modal-body {
+    padding: 1.25rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .modal-school-name {
+    font-size: 0.95rem;
   }
 }
 </style>
