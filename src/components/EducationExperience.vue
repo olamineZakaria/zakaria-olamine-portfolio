@@ -197,6 +197,12 @@ const experiences = ref([
     logoText: 'LabSiv',
     image: getImageUrl('labsiv.png'),
     color: '#1f2937'
+  },
+  {
+    name: 'INRAE',
+    logoText: 'INRAE',
+    image: getImageUrl('Logo-INRAE_Transparent.svg.png'),
+    color: '#1f2937'
   }
 ])
 </script>
@@ -375,9 +381,9 @@ const experiences = ref([
   text-align: center;
 }
 
-/* Ajustement pour la colonne Expériences - 4 logos */
+/* Ajustement pour la colonne Expériences - 5 logos */
 .content-grid .column:last-child .logos-grid {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 /* Pour les formations - 2 logos */

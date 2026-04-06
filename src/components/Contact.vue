@@ -42,8 +42,8 @@
             </div>
             <div class="card-content">
               <span class="card-label">TÉLÉPHONE</span>
-              <a href="tel:+212650888704" class="card-detail">
-                +212 650 888 704
+              <a href="tel:+33754060625" class="card-detail">
+                +33 7 54 54 54 54
               </a>
             </div>
             <div class="card-arrow">
@@ -57,7 +57,7 @@
             </div>
             <div class="card-content">
               <span class="card-label">LOCALISATION</span>
-              <span class="card-detail">Agadir, Maroc</span>
+              <span class="card-detail">Avignon, France</span>
             </div>
           </div>
 
