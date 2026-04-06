@@ -41,7 +41,7 @@
 import { ref } from 'vue'
 
 const baseUrl = import.meta.env.BASE_URL
-const heroImageSrc = `${baseUrl}zazazakaria.png`
+const heroImageSrc = `${baseUrl}Gemini_Generated_Image_k1dczyk1dczyk1dc.png`
 
 const imageError = ref(false)
 

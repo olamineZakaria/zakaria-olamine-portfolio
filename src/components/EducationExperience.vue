@@ -185,28 +185,28 @@ const experiences = ref([
     color: '#1f2937'
   },
   {
-    name: 'Commune Inzegane',
-    logoText: 'Commune Inzegane',
-    image: getImageUrl('comune inzegane.png'),
-    color: '#2563eb'
-  },
-  {
-    name: 'Cofisk SARL',
-    logoText: 'Cofisk SARL',
-    image: getImageUrl('cofisk.png'),
-    color: '#2563eb'
-  },
-  {
-    name: 'UM6P-FMS',
-    logoText: 'UM6P-FMS',
-    image: getImageUrl('um6p.png'),
-    color: '#1f2937'
-  },
-  {
     name: 'LabSiv',
     logoText: 'LabSiv',
     image: getImageUrl('labsiv.png'),
     color: '#1f2937'
+  },
+  {
+    name: 'UM6P',
+    logoText: 'UM6P',
+    image: getImageUrl('um6p.png'),
+    color: '#1f2937'
+  },
+  {
+    name: 'Cofisk',
+    logoText: 'Cofisk',
+    image: getImageUrl('cofisk.png'),
+    color: '#2563eb'
+  },
+  {
+    name: 'Commune Inzegane',
+    logoText: 'Commune Inzegane',
+    image: getImageUrl('comune inzegane.png'),
+    color: '#2563eb'
   }
 ])
 </script>
@@ -386,7 +386,7 @@ const experiences = ref([
 }
 
 .logo-label-inrae {
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.5px;
 }
 
@@ -398,7 +398,7 @@ const experiences = ref([
 
 /* Ajustement pour la colonne Expériences - 5 logos */
 .content-grid .column:last-child .logos-grid {
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /* Pour les formations - 2 logos */
@@ -418,7 +418,7 @@ const experiences = ref([
   }
 
   .content-grid .column:last-child .logos-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .logo-wrapper {
@@ -465,7 +465,7 @@ const experiences = ref([
   }
 
   .content-grid .column:last-child .logos-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .logo-text {
@@ -494,7 +494,7 @@ const experiences = ref([
   }
 
   .content-grid .column:last-child .logos-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .section-tabs {
