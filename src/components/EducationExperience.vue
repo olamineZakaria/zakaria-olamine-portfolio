@@ -62,6 +62,7 @@
                     :src="experience.image" 
                     :alt="experience.name"
                     class="logo-image"
+                    :class="{ 'logo-image-inrae': experience.name === 'INRAE' }"
                   />
                   <div v-else class="logo-content">
                     <span class="logo-text" :style="{ color: experience.color }">{{ experience.logoText }}</span>
@@ -69,7 +70,9 @@
                   </div>
                 </div>
               </div>
-              <p class="logo-label">{{ experience.name }}</p>
+              <p class="logo-label" :class="{ 'logo-label-inrae': experience.name === 'INRAE' }">
+                {{ experience.title || experience.name }}
+              </p>
             </div>
           </div>
         </div>
@@ -175,6 +178,13 @@ const formations = ref([
 
 const experiences = ref([
   {
+    name: 'INRAE',
+    title: 'INRAE',
+    logoText: 'INRAE',
+    image: getImageUrl('Logo-INRAE_Transparent.svg.png'),
+    color: '#1f2937'
+  },
+  {
     name: 'Commune Inzegane',
     logoText: 'Commune Inzegane',
     image: getImageUrl('comune inzegane.png'),
@@ -196,12 +206,6 @@ const experiences = ref([
     name: 'LabSiv',
     logoText: 'LabSiv',
     image: getImageUrl('labsiv.png'),
-    color: '#1f2937'
-  },
-  {
-    name: 'INRAE',
-    logoText: 'INRAE',
-    image: getImageUrl('Logo-INRAE_Transparent.svg.png'),
     color: '#1f2937'
   }
 ])
@@ -381,6 +385,17 @@ const experiences = ref([
   text-align: center;
 }
 
+.logo-label-inrae {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.logo-image-inrae {
+  width: 88%;
+  height: auto;
+  max-height: 72%;
+}
+
 /* Ajustement pour la colonne Expériences - 5 logos */
 .content-grid .column:last-child .logos-grid {
   grid-template-columns: repeat(5, 1fr);
@@ -413,6 +428,11 @@ const experiences = ref([
 
   .logo-image {
     padding: 0.6rem;
+  }
+
+  .logo-image-inrae {
+    width: 84%;
+    max-height: 70%;
   }
 }
 
@@ -460,6 +480,11 @@ const experiences = ref([
   .logo-image {
     padding: 0.5rem;
   }
+
+  .logo-image-inrae {
+    width: 82%;
+    max-height: 68%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -487,6 +512,11 @@ const experiences = ref([
 
   .logo-image {
     padding: 0.4rem;
+  }
+
+  .logo-image-inrae {
+    width: 80%;
+    max-height: 66%;
   }
 
   .logo-placeholder {
