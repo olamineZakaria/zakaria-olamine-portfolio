@@ -3,7 +3,7 @@
     <div class="hero-content">
       <div class="hero-text">
         <h1 class="hero-name">Zakaria Olamine</h1>
-        <p class="hero-title">Data Scientist • Ingénieur IA/ML</p>
+        <p class="hero-title">Stagiaire Ingénieur de Recherche INRAE PACA @EMMAH</p>
         <p class="hero-description">
           Je conçois et déploie des solutions d'intelligence artificielle pour transformer des données complexes en leviers d'aide à la décision, de l'analyse exploratoire à la mise en production.
         </p>
