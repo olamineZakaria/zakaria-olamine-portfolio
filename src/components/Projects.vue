@@ -7,26 +7,16 @@
         </div>
         <h2 class="section-main-title">Projets clés et réalisation</h2>
         <p class="section-description">
-          Je suis actuellement en phase d'organisation de mes projets.
+          Je suis actuellement en phase d'organisation de mes projets. 
           Consultez mon GitHub pour découvrir mes réalisations.
         </p>
-      </div>
-
-      <div class="projects-grid">
-        <article v-for="project in projects" :key="project.title" class="project-card">
-          <h3 class="project-title">{{ project.title }}</h3>
-        </article>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-const projects = [
-  {
-    title: 'Estimation de la chlorophylle'
-  }
-]
+// Coming soon - projets à venir
 </script>
 
 <style scoped>
@@ -94,42 +84,6 @@ const projects = [
 @media (max-width: 480px) {
   .section-main-title {
     font-size: 1.75rem;
-  }
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.2rem;
-}
-
-.project-card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  padding: 1.5rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-}
-
-.project-title {
-  font-size: 1.2rem;
-  color: #111827;
-}
-
-@media (max-width: 1024px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
   }
 }
 </style>
